@@ -1,11 +1,19 @@
+"use client";
 import { motion } from "framer-motion";
+import { MouseEventHandler } from "react";
 
 const buttonVariants = {
   hover: { scale: 1.05 },
   tap: { scale: 0.95 },
 };
 
-const ActionButton = ({ onClick, stage, isLightOn }) => {
+interface ActionButtonProps {
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  stage: number;
+  isLightOn: boolean;
+}
+
+const ActionButton = ({ onClick, stage, isLightOn }: ActionButtonProps) => {
   const buttonText = [
     "Turn on the lights!",
     "Bring The Baloons",
