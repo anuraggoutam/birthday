@@ -3,8 +3,16 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+interface ConfettiPiece {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  color: string;
+}
+
 const Confetti = () => {
-  const [confetti, setConfetti] = useState([]);
+  const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
 
   useEffect(() => {
     const colors = [
